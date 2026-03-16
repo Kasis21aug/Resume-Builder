@@ -7,6 +7,12 @@ connectDB();
 
 const app = express();
 
+app.use(cors({
+  origin: "https://kasis-resume-builder.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 // Allow both localhost (dev) and Netlify URL (production)
 const allowedOrigins = [
   'http://localhost:3000',
